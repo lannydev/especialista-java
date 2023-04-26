@@ -3,6 +3,9 @@ public class Carro {
     private String fabricante;
     private String modelo;
     private Integer anoFabricacao;
+    //usando a composição.
+    Proprietario proprietario;
+
 
     private String cor;
 
