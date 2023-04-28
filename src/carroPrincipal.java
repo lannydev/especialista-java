@@ -1,5 +1,9 @@
+// a variável não armazena o objeto, a variável referencia o objeto
+
 public class carroPrincipal {
     public static void main(String[] args) {
+        Proprietario proprietario1 = new Proprietario();
+
         Carro carro  = new Carro();
         Carro carro2 = new Carro();
 
@@ -8,7 +12,7 @@ public class carroPrincipal {
         carro.setAnoFabricacao(2019);
         carro.setCor("cinza");
 
-        carro.proprietario = new Proprietario();
+        carro.proprietario = proprietario1;
         carro.proprietario.nome = "Elaine";
         carro.proprietario.cpf = "123,456,789-10";
         carro.proprietario.anoNascimento = 1986;
