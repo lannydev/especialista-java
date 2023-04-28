@@ -72,7 +72,8 @@ public class Carro {
 
     public void calcularValorRevenda(){
         int tempoDeUdoEmAnos = anoAtual - anoFabricacao;
-        double valorRevenda = (precoCompra / 20) * (20 - tempoDeUdoEmAnos);
+        int vidaUtilEmAnos = 20;
+        double valorRevenda = (precoCompra / vidaUtilEmAnos) * (vidaUtilEmAnos - tempoDeUdoEmAnos);
 
         if (valorRevenda < 0){
             valorRevenda = 0;
