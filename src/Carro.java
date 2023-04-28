@@ -3,6 +3,9 @@ public class Carro {
     private String fabricante;
     private String modelo;
     private Integer anoFabricacao;
+    private Double precoCompra;
+
+    private Integer anoAtual;
     //usando a composição.
     Proprietario proprietario;
 
@@ -49,5 +52,34 @@ public class Carro {
 
     public void setCor(String cor) {
         this.cor = cor;
+    }
+
+    public Double getPrecoCompra() {
+        return precoCompra;
+    }
+
+    public void setPrecoCompra(Double precoCompra) {
+        this.precoCompra = precoCompra;
+    }
+
+    public Integer getAnoAtual() {
+        return anoAtual;
+    }
+
+    public void setAnoAtual(Integer anoAtual) {
+        this.anoAtual = anoAtual;
+    }
+
+    public void calcularValorRevenda(){
+        int tempoDeUdoEmAnos = anoAtual - anoFabricacao;
+        double valorRevenda = (precoCompra / 20) * (20 - tempoDeUdoEmAnos);
+
+        if (valorRevenda < 0){
+            valorRevenda = 0;
+        }
+
+        System.out.printf("Tempo de uso (anos): %d%n", tempoDeUdoEmAnos);
+        System.out.printf("Valor de revenda: %6.2f%n", valorRevenda);
+
     }
 }

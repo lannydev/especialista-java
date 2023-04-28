@@ -11,11 +11,15 @@ public class carroPrincipal {
         carro.setModelo("Cronos");
         carro.setAnoFabricacao(2019);
         carro.setCor("cinza");
+        carro.setAnoAtual(2023);
+        carro.setPrecoCompra(85000.00);
 
         carro.proprietario = proprietario1;
         carro.proprietario.nome = "Elaine";
         carro.proprietario.cpf = "123,456,789-10";
         carro.proprietario.anoNascimento = 1986;
+
+        carro.calcularValorRevenda();
 
         System.out.println(carro.getFabricante());
         System.out.println(carro.getModelo());
@@ -24,6 +28,7 @@ public class carroPrincipal {
         System.out.println(carro.proprietario.nome);
         System.out.println(carro.proprietario.cpf);
         System.out.println(carro.proprietario.anoNascimento);
+
 
     }
 }
