@@ -70,8 +70,22 @@ public class Carro {
         this.anoAtual = anoAtual;
     }
 
+    public double calcularIpva(){
+        return calcularValorRevenda() * 0.04;
+    }
+
+    public void imprirResumoDepreciacao(){
+        System.out.printf("Valor de revenda: %6.2f%n", calcularValorRevenda());
+        System.out.println("Meu tempo de uso " + calcularTempoDeUsoEmAnos());
+        System.out.printf("Valor de IPVA: %6.2f%n", calcularIpva());
+    }
+
+    public int calcularTempoDeUsoEmAnos(){
+        return anoAtual - anoFabricacao;
+    }
+
     public double calcularValorRevenda(){
-        int tempoDeUdoEmAnos = anoAtual - anoFabricacao;
+        int tempoDeUdoEmAnos = calcularTempoDeUsoEmAnos();
         int vidaUtilEmAnos = 20;
         double valorRevenda = (precoCompra / vidaUtilEmAnos) * (vidaUtilEmAnos - tempoDeUdoEmAnos);
 
