@@ -70,7 +70,7 @@ public class Carro {
         this.anoAtual = anoAtual;
     }
 
-    public void calcularValorRevenda(){
+    public double calcularValorRevenda(){
         int tempoDeUdoEmAnos = anoAtual - anoFabricacao;
         int vidaUtilEmAnos = 20;
         double valorRevenda = (precoCompra / vidaUtilEmAnos) * (vidaUtilEmAnos - tempoDeUdoEmAnos);
@@ -79,8 +79,10 @@ public class Carro {
             valorRevenda = 0;
         }
 
-        System.out.printf("Tempo de uso (anos): %d%n", tempoDeUdoEmAnos);
-        System.out.printf("Valor de revenda: %6.2f%n", valorRevenda);
+        //System.out.printf("Tempo de uso (anos): %d%n", tempoDeUdoEmAnos);
+       // System.out.printf("Valor de revenda: %6.2f%n", valorRevenda);
+
+        return valorRevenda;
 
     }
 }

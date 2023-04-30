@@ -16,10 +16,10 @@ public class carroPrincipal {
 
         carro.proprietario = proprietario1;
         carro.proprietario.nome = "Elaine";
-        carro.proprietario.cpf = "123,456,789-10";
+        carro.proprietario.cpf = "123.456.789-10";
         carro.proprietario.anoNascimento = 1986;
 
-        carro.calcularValorRevenda();
+        double meuvalorRevenda = carro.calcularValorRevenda();
 
         System.out.println(carro.getFabricante());
         System.out.println(carro.getModelo());
@@ -28,6 +28,9 @@ public class carroPrincipal {
         System.out.println(carro.proprietario.nome);
         System.out.println(carro.proprietario.cpf);
         System.out.println(carro.proprietario.anoNascimento);
+
+        System.out.printf("Tempo de uso (anos): %d%n", carro.getAnoAtual() - carro.getAnoFabricacao());
+        System.out.printf("Valor de revenda: %6.2f%n", meuvalorRevenda);
 
 
     }
