@@ -71,13 +71,24 @@ public class Carro {
     }
 
     public double calcularIpva(){
+
+        int tempoDeUso = calcularTempoDeUsoEmAnos();
+        if (tempoDeUso >= 10){
+            return 0;
+        }
+
         return calcularValorRevenda() * 0.04;
     }
 
     public void imprirResumoDepreciacao(){
-        System.out.printf("Valor de revenda: %6.2f%n", calcularValorRevenda());
-        System.out.println("Meu tempo de uso " + calcularTempoDeUsoEmAnos());
-        System.out.printf("Valor de IPVA: %6.2f%n", calcularIpva());
+        if (precoCompra <= 0){
+            System.out.println("Valor de compra zerado, não é possível imprimir depreciação");
+            return;
+        }else {
+            System.out.printf("Valor de revenda: %6.2f%n", calcularValorRevenda());
+            System.out.println("Meu tempo de uso " + calcularTempoDeUsoEmAnos());
+            System.out.printf("Valor de IPVA: %6.2f%n", calcularIpva());
+        }
     }
 
     public int calcularTempoDeUsoEmAnos(){
