@@ -1,3 +1,5 @@
+package carro;
+
 public class Proprietario {
 
     String nome;

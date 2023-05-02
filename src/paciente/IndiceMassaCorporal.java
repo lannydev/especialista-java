@@ -1,2 +1,4 @@
-package paciente;public class IndiceMassaCorporal {
+package paciente;
+
+public class IndiceMassaCorporal {
 }

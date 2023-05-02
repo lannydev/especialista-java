@@ -1,4 +1,4 @@
-// a variável não armazena o objeto, a variável referencia o objeto
+package carro;// a variável não armazena o objeto, a variável referencia o objeto
 
 public class carroPrincipal {
     public static void main(String[] args) {
