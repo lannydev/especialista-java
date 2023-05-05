@@ -1,10 +1,10 @@
 package paciente;
 
-public class Paciente {
+public class CalculadoraImc {
     double peso;
     double altura;
 
-    IndiceMassaCorporal calcularImc(){
+    IndiceMassaCorporal calcular(){
 
         IndiceMassaCorporal imc = new IndiceMassaCorporal();
         imc.peso = peso;
