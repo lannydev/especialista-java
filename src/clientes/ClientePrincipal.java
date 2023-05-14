@@ -3,7 +3,7 @@ package clientes;
 public class ClientePrincipal {
     public static void main(String[] args) {
         String[] nomes = {"Elaine", "Diego", "Lara"};
-        String nomeSorteado = Sorteador.<String>sortear(nomes);
+        String nomeSorteado = Sorteador.sortear(nomes);
         System.out.println(nomeSorteado);
 
         Cliente [] clientes = {
@@ -12,7 +12,7 @@ public class ClientePrincipal {
                 new Cliente("L.C Artes", 3_000_000),
         };
 
-        Cliente clienteSorteado = Sorteador.<Cliente>sortear(clientes);
+        Cliente clienteSorteado = Sorteador.sortear(clientes);
         System.out.println(clienteSorteado.getRazaoSocial());
     }
 }
