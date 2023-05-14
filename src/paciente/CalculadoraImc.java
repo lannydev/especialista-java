@@ -1,27 +1,20 @@
 package paciente;
 
 public class CalculadoraImc {
-    //double peso;
-    //double altura;
 
-    IndiceMassaCorporal calcular(double peso, double altura){
+
+    IndiceMassaCorporal calcular(Paciente paciente){
 
         IndiceMassaCorporal imc = new IndiceMassaCorporal();
-        imc.peso = peso;
-        imc.altura = altura;
-        imc.resultado = peso / (altura * altura);
+        imc.peso = paciente.peso;
+        imc.altura = paciente.altura;
+        imc.resultado = paciente.peso / (paciente.altura * paciente.altura);
 
-        if (imc.estaComObedidade() ) {
-            System.out.printf("Seu IMC é: %2f, caracteriza Obesidade ", imc.resultado);
-            return imc;
-        }else if (imc.estaAbaixoDoPesoIdeal()){
-            System.out.printf("Seu IMC é: %2f, significa que está abaixo do peso ideal", imc.resultado);
-            return imc;
-        }
-        System.out.printf("Seu IMC é: %2f ", imc.resultado);
         return imc;
 
     }
+
+
 
 
 }

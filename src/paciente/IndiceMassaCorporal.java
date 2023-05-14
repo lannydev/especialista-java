@@ -1,9 +1,9 @@
 package paciente;
 
 public class IndiceMassaCorporal {
-    double resultado;
     double peso;
     double altura;
+    double resultado;
 
     boolean estaComObedidade(){
         return resultado >=30;
@@ -12,6 +12,8 @@ public class IndiceMassaCorporal {
     boolean estaAbaixoDoPesoIdeal(){
         return resultado < 18.5;
     }
+
+
 
 
 }
