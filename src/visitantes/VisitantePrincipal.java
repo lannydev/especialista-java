@@ -2,7 +2,7 @@ package visitantes;
 
 public class VisitantePrincipal {
     public static void main(String[] args) {
-        Visitante visitante = new Visitante();
+        var visitante = new Visitante();
         visitante.nome = "Elaine";
         visitante.idade = 20;
 
@@ -11,7 +11,7 @@ public class VisitantePrincipal {
                     Visitante.IDADE_MINIMA_PARA_ACESSO);
         }else {
             System.out.println("Acesso liberado");
-            CadastroPortaria cadastroPortaria = new CadastroPortaria();
+            var cadastroPortaria = new CadastroPortaria();
             cadastroPortaria.cadastrar(visitante, 2);
 
         }
