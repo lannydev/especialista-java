@@ -10,7 +10,10 @@ public class ArraysPrincipal {
         notas[3] = 6.5;
         System.out.println(notas[3]);
 
-        double[] minhasNotas = {6.0, 7.1, 6.8, 9.5};
+        double mediaNota = CalculadoraDeNotas.calcularMedia(notas);
+        System.out.println(mediaNota);
+
+
 
 
 
