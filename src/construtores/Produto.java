@@ -1,25 +1,29 @@
 package construtores;
 
+import java.util.Objects;
+import java.util.Queue;
+
 public class Produto {
+
+    static final int ESTOQUE_INICIAL = 10;
     String nome;
     int qantidadeEmEstoque;
     double valor;
 
     Produto(){
-        System.out.println("Construtor padrão");
+        this("Pessoa Qualquer");
 
     }
 
-    public Produto(String nome, int qantidadeEmEstoque, double valor) {
+    public Produto(String nome) {
+       this(nome, ESTOQUE_INICIAL);
+    }
+
+    public Produto(String nome, int estoqueInicial) {
+        Objects.requireNonNull(nome, "Nome é obrigatório");
         this.nome = nome;
-        this.qantidadeEmEstoque = qantidadeEmEstoque;
-        this.valor = valor;
-        System.out.println("Contrutor com parâmetros");
+        this.qantidadeEmEstoque = estoqueInicial;
     }
 
-    public Produto(String nome, double valor) {
-        this.nome = nome;
-        this.valor = valor;
-        System.out.println("sobrecarga de construtor");
-    }
+
 }
