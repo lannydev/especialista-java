@@ -16,4 +16,10 @@ public class Produto {
         this.valor = valor;
         System.out.println("Contrutor com parâmetros");
     }
+
+    public Produto(String nome, double valor) {
+        this.nome = nome;
+        this.valor = valor;
+        System.out.println("sobrecarga de construtor");
+    }
 }
