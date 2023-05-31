@@ -20,9 +20,14 @@ public class ArraysPrincipal2 {
         int [] numeroSenha = {12, 5, 7, 10, 15, 30, 40};
         int [] novaSenha = new int[numeroSenha.length - 1];
 
-        int indiceExclusão = 1;
+        int indiceExclusão = 3;
 
         System.arraycopy(numeroSenha, 0, novaSenha, 0, indiceExclusão);
+
+        System.arraycopy(numeroSenha, indiceExclusão + 1, novaSenha, indiceExclusão, novaSenha.length - indiceExclusão);
+
+        System.out.println(Arrays.toString(numeroSenha));
+        System.out.println(Arrays.toString(novaSenha));
 
     }
 }
