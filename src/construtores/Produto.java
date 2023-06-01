@@ -2,6 +2,7 @@ package construtores;
 
 import java.util.Objects;
 import java.util.Queue;
+import java.util.UUID;
 
 public class Produto {
 
@@ -9,6 +10,8 @@ public class Produto {
     String nome;
     int qantidadeEmEstoque;
     double valor;
+
+    final String codigoProduto;
 
     Produto(){
         this("Pessoa Qualquer");
@@ -23,7 +26,7 @@ public class Produto {
         Objects.requireNonNull(nome, "Nome é obrigatório");
         this.nome = nome;
         this.qantidadeEmEstoque = estoqueInicial;
+        this.codigoProduto = UUID.randomUUID().toString();
     }
-
 
 }
