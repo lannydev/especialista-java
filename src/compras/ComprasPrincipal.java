@@ -16,8 +16,8 @@ public class ComprasPrincipal {
         Recibo reciboPagamento = pagamento.efetuarPagamento(lcPersonalizadosEvariedades, cartao, 150.0);
         reciboPagamento.imprimir();
 
-        System.out.printf("Titular: %s%n", cartao.nomeTitular);
-        System.out.printf("Saldo: R$%.2f%n", cartao.saldo);
+        System.out.printf("Titular: %s%n", cartao.getNomeTitular());
+        System.out.printf("Saldo: R$%.2f%n", cartao.getSaldo());
 
 
 
