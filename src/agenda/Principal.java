@@ -6,8 +6,8 @@ public class Principal {
         Horario horario = new Horario(10, 50);
         Agendamento agendamentoCorteDeCabelo = new Agendamento(horario, "Corte de cabelo em camadas");
 
-        horario.setHora(12);
-        horario.setMinuto(35);
+       // horario.setHora(12);
+       // horario.setMinuto(35);
         Agendamento agendamentoEscovaIndiana = new Agendamento(horario, "Hidratação com escova e finalização com prancha");
 
         imprimir(agendamentoCorteDeCabelo);
