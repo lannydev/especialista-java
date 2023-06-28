@@ -1,6 +1,6 @@
 package com.algaworks.banco;
 
-public class Conta {
+public class ContaComum {
 
     public static final int NORMAL = 0;
     public static final int INVESTIMENTO = 1;
