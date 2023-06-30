@@ -36,21 +36,14 @@ public class ContaEspecial extends ContaInvestimento{
         this.limiteChequeEspecial = limiteChequeEspecial;
     }
 
-    public void sacar(double valorSaque){
-        if (valorSaque <= 0){
-            throw new IllegalArgumentException("valor a sacar deve ser maior que 0");
-        }
-        if (getSaldoDisponivel() < valorSaque){
+
+    protected void validarSaldoParaSaque(double valorSaque) {
+        if (getSaldoDisponivel()<valorSaque){
             throw new RuntimeException("Saldo insuficiente para saque");
         }
-
-        setSaldo(getSaldo()+valorSaque);
-        System.out.printf("Saque no valor R$%.2f efetuado com sucesso. Saldo atual: R$%.2f%n", valorSaque, getSaldo());
     }
 
-
-
-   public void debitarTarifaMensal(){
+    public void debitarTarifaMensal(){
             sacar(getTaxaConta());
 
    }

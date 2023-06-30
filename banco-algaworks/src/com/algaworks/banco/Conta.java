@@ -114,14 +114,19 @@ public class Conta {
 
     }
 
-    public void sacar(double valorSaque){
-        if (valorSaque <= 0){
-            throw new IllegalArgumentException("valor a sacar deve ser maior que 0");
-        }
+    protected void validarSaldoParaSaque(double valorSaque){
         if (getSaldoDisponivel() < valorSaque){
             throw new RuntimeException("Saldo insuficiente para saque");
         }
 
+    }
+
+    public void sacar(double valorSaque){
+        if (valorSaque <= 0){
+            throw new IllegalArgumentException("valor a sacar deve ser maior que 0");
+        }
+
+        validarSaldoParaSaque(valorSaque);
         saldo -= valorSaque;
        System.out.printf("Saque no valor R$%.2f efetuado com sucesso. Saldo atual: R$%.2f%n", valorSaque, getSaldo());
    }
