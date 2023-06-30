@@ -49,6 +49,10 @@ public class Conta {
         return saldo;
     }
 
+    protected void setSaldo(double saldo){
+        this.saldo = saldo;
+    }
+
     public double getSaldoDisponivel(){
        return getSaldo() + getLimiteChequeEspecial();
     }

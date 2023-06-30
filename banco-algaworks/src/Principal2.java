@@ -8,7 +8,7 @@ public class Principal2 {
         conta.setTitular(new Titular("Elaine Cruz", "012.345.678-90"));
         conta.setAgencia(1425);
         conta.setNumeroConta(107333);
-        conta.setTipo(Conta.INVESTIMENTO);
+        conta.setTipo(Conta.ESPECIAL);
 
         conta.imprimirDemonstrativo();
         System.out.println();
