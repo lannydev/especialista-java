@@ -49,12 +49,9 @@ public class ContaEspecial extends ContaInvestimento{
    }
 
 
-    public void imprimirDemonstrativo() {
-        System.out.println();
-        System.out.printf("Agência: %d%n", getAgencia());
-        System.out.printf("Conta: %d%n", getNumeroConta());
-        System.out.printf("Titular: %s%n", getTitular().getCpf());
-        System.out.printf("Saldo: %.2f%n", getSaldo());
+   @Override
+   public void imprimirDemonstrativo() {
+        super.imprimirDemonstrativo();
         System.out.printf("Saldo disponível: %.2f%n", getSaldoDisponivel());
 
     }
