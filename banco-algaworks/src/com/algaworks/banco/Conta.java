@@ -13,110 +13,44 @@ public class Conta {
 
     private int tipo = NORMAL;
 
-    // atributo da conta INVESTIMENTO e ESPECIAL.
-    private double valorTotalInvestimento;
 
-    // atributos apenas de conta do tipo ESPECIAL
+    /*public Conta(){
 
-    private double taxaConta;
-    private double limiteChequeEspecial;
+    }
+     */
 
-    public Conta(){
-
+    public Conta(Titular titular, int agencia, int numeroConta) {
+        this.titular = titular;
+        this.agencia = agencia;
+        this.numeroConta = numeroConta;
     }
 
     public Titular getTitular() {
         return titular;
     }
 
-    public void setTitular(Titular titular) {
-        this.titular = titular;
-    }
-
     public int getAgencia() {
         return agencia;
-    }
-
-    public void setAgencia(int agencia) {
-        this.agencia = agencia;
     }
 
     public int getNumeroConta() {
         return numeroConta;
     }
 
-    public void setNumeroConta(int numeroConta) {
-        this.numeroConta = numeroConta;
-    }
 
     public double getSaldo() {
         return saldo;
     }
 
-    protected void setSaldo(double saldo){
-        this.saldo = saldo;
-    }
 
     public double getSaldoDisponivel(){
-       return getSaldo() + getLimiteChequeEspecial();
+       return getSaldo();
     }
 
     public int getTipo() {
         return tipo;
     }
 
-    public void setTipo(int tipo) {
-       if (tipo != NORMAL && tipo != INVESTIMENTO && tipo != ESPECIAL){
-           throw new IllegalArgumentException("Tipo de conta inválido" + tipo);
-       }
-        this.tipo = tipo;
-
-       if (tipo != ESPECIAL){
-           this.limiteChequeEspecial = 0;
-       }
-    }
-
-    public double getValorTotalInvestimento() {
-        return valorTotalInvestimento;
-    }
-
-    public double getTaxaConta() {
-        return taxaConta;
-    }
-
-    public void setTaxaConta(double taxaConta) {
-        /*if (getTipo() != ESPECIAL){
-            throw new RuntimeException("Este tipo de conta não possui taxa");
-        }*/
-
-        this.taxaConta = taxaConta;
-    }
-
-    public double getLimiteChequeEspecial() {
-        return limiteChequeEspecial;
-    }
-
-    public void setLimiteChequeEspecial(double limiteChequeEspecial) {
-        if (getTipo() != ESPECIAL){
-            throw new RuntimeException("Este tipo de conta não permite limite de cheque especial");
-        }
-
-        this.limiteChequeEspecial = limiteChequeEspecial;
-    }
-
-    public void creditarInvestimentos(double percentualTaxa){
-
-        if (getTipo() == INVESTIMENTO || getTipo() == ESPECIAL){
-            double valorInvestimento = getSaldo() * percentualTaxa / 100;
-            valorTotalInvestimento += valorInvestimento;
-            System.out.printf("Valor total do investimento neste período é R$%.2f%n", valorTotalInvestimento);
-            depositar(valorInvestimento);
-
-        }else {
-            throw new RuntimeException("Não pode creditar investimento neste tipo de conta");
-        }
-
-    }
 
     protected void validarSaldoParaSaque(double valorSaque){
         if (getSaldoDisponivel() < valorSaque){
@@ -152,14 +86,5 @@ public class Conta {
        System.out.printf("Saldo: %.2f%n", getSaldo());
    }
 
-   public void debitarTarifaMensal(){
-
-        if (tipo == ESPECIAL){
-            sacar(getTaxaConta());
-        } else {
-            throw new RuntimeException("Este tipo de conta não possui taxa de manutenção");
-        }
-
-   }
 
 }

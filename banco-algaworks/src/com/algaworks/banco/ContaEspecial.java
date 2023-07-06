@@ -1,22 +1,13 @@
 package com.algaworks.banco;
 
 public class ContaEspecial extends ContaInvestimento{
-     private double valorTotalInvestimento;
 
     private double taxaConta;
     private double limiteChequeEspecial;
 
-    public ContaEspecial(){
-        super();
-    }
-
-
-    public double getSaldoDisponivel(){
-       return getSaldo() + getLimiteChequeEspecial();
-    }
-
-    public double getValorTotalInvestimento() {
-        return valorTotalInvestimento;
+    public ContaEspecial(Titular titular, int agencia, int numeroConta, double taxaConta) {
+        super(titular, agencia, numeroConta);
+        this.taxaConta = taxaConta;
     }
 
     public double getTaxaConta() {

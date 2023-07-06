@@ -4,11 +4,9 @@ import com.algaworks.banco.Titular;
 public class Principal2 {
 
     public static void main(String[] args) {
-        Conta conta = new Conta();
-        conta.setTitular(new Titular("Elaine Cruz", "012.345.678-90"));
-        conta.setAgencia(1425);
-        conta.setNumeroConta(107333);
-        conta.setTipo(Conta.ESPECIAL);
+        Titular titular = new Titular("Elaine", "12345678910");
+        Conta conta = new Conta(titular, 1425, 1073338);
+        //conta.setTipo(Conta.ESPECIAL);
 
         conta.imprimirDemonstrativo();
         System.out.println();
@@ -20,7 +18,7 @@ public class Principal2 {
         conta.sacar(150);
         conta.imprimirDemonstrativo();
 
-        conta.creditarInvestimentos(35);
+        //conta.creditarInvestimentos(35);
         conta.imprimirDemonstrativo();
     }
 }
