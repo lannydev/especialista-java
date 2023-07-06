@@ -21,6 +21,10 @@ public class Conta {
     private double taxaConta;
     private double limiteChequeEspecial;
 
+    public Conta(){
+
+    }
+
     public Titular getTitular() {
         return titular;
     }

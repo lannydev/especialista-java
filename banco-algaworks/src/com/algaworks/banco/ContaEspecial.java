@@ -6,6 +6,10 @@ public class ContaEspecial extends ContaInvestimento{
     private double taxaConta;
     private double limiteChequeEspecial;
 
+    public ContaEspecial(){
+        super();
+    }
+
 
     public double getSaldoDisponivel(){
        return getSaldo() + getLimiteChequeEspecial();
