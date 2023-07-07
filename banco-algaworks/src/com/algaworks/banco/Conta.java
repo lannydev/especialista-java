@@ -95,4 +95,12 @@ public class Conta {
                 ", tipo=" + tipo +
                 '}';
     }
+    @Override
+    public boolean equals(Object obj){
+        if (this.getClass() != obj.getClass() || obj == null) return false;
+
+        Conta conta = (Conta) obj;
+        if (this.agencia != conta.agencia || this.numeroConta != conta.numeroConta) return false;
+        return true;
+    }
 }

@@ -32,13 +32,13 @@ public class ContaEspecial extends ContaInvestimento{
     }
 
 
-    protected void validarSaldoParaSaque(double valorSaque) {
+    protected final void validarSaldoParaSaque(double valorSaque) {
         if (getSaldoDisponivel()<valorSaque){
             throw new RuntimeException("Saldo insuficiente para saque");
         }
     }
 
-    public void debitarTarifaMensal(){
+    public final void debitarTarifaMensal(){
             sacar(getTaxaConta());
 
    }

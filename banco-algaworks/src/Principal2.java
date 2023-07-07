@@ -23,5 +23,13 @@ public class Principal2 {
 
 
         System.out.println("Sua conta: " + conta);
+
+
+        Titular titular2 = new Titular("Elaine", "12345678910");
+        Conta conta2 = new Conta(titular, 1425, 1073338);
+
+        System.out.println(conta.equals(conta2));
+        System.out.println(conta2.equals(titular2));
+
     }
 }
