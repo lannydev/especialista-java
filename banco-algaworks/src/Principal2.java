@@ -20,5 +20,8 @@ public class Principal2 {
 
         //conta.creditarInvestimentos(35);
         conta.imprimirDemonstrativo();
+
+
+        System.out.println("Sua conta: " + conta);
     }
 }
